@@ -89,18 +89,8 @@ module Beatport
       Track.all(*args)
     end
 
-    def self.search(query, type, *args)
-      if type == "Track"
-        Search.query_of_type(query, Track, *args)
-      elsif type == "Artist"
-        Search.query_of_type(query, Artist, *args)
-      elsif type == "Label"
-        Search.query_of_type(query, Label, *args)
-      elsif type == "Release"
-        Search.query_of_type(query, Release, *args)
-      else
-        Search.query(query, *args)
-      end
+    def self.search(query, *args)
+      Search.query(query, *args)
     end
   end
 end
