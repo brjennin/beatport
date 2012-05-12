@@ -10,7 +10,7 @@ module Beatport
       def self.query_of_type(query, type, options = {})
         options['query'] = query
 
-        Client.retrieve 'search', Beatport::Catalog.send(type.constantize), options
+        Client.retrieve 'search', type, options
       end
 
     end
