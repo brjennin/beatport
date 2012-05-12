@@ -92,5 +92,9 @@ module Beatport
     def self.search(query, *args)
       Search.query(query, *args)
     end
+
+    def self.search_of_type(query, type, *args)
+      Search.query(query, type, *args)
+    end
   end
 end
